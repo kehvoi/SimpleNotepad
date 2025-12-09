@@ -12,8 +12,10 @@ public class GUI implements ActionListener {
     JMenu menuFile, menuEdit, menuCustomize;
     JMenuItem fileNew, fileOpen, fileSave, fileSaveAs, fileExit;
 
-    JMenuItem cusWrap, cusFontArial, cusFontCSMS, cusFontTNR, cusFontSize8, cusFontSize12, cusFontSize16, cusFontSize20, cusFontSize24, cusFontSize28;
-    JMenu menuFont, menuFontSize;
+    JMenuItem cusWrap, cusFontArial, cusFontCSMS, cusFontTNR, cusFontSize8, cusFontSize12, cusFontSize16, cusFontSize20, cusFontSize24, cusFontSize28, cusColor1, cusColor2, cusColor3;
+    JMenu menuFont, menuFontSize, menuColor;
+
+
 
     boolean wordWrapOn = false;
 
@@ -34,6 +36,7 @@ public class GUI implements ActionListener {
         custom.selectedFont = "Arial";
         custom.createFont(16);
         custom.wordWrap();
+        custom.setColor("White");
 
         window.setVisible(true);
     }
@@ -113,6 +116,9 @@ public class GUI implements ActionListener {
         cusWrap.setActionCommand("Word Wrap");
         menuCustomize.add(cusWrap);
 
+        menuColor = new JMenu("Color");
+        menuCustomize.add(menuColor);
+
         menuFont = new JMenu("Font");
         menuCustomize.add(menuFont);
 
@@ -163,6 +169,22 @@ public class GUI implements ActionListener {
         cusFontSize28.addActionListener(this);
         cusFontSize28.setActionCommand("size 28");
         menuFontSize.add(cusFontSize28);
+
+        cusColor1 = new JMenuItem("Black");
+        cusColor1.addActionListener(this);
+        cusColor1.setActionCommand("Black");
+        menuColor.add(cusColor1);
+
+        cusColor2 = new JMenuItem("White");
+        cusColor2.addActionListener(this);
+        cusColor2.setActionCommand("White");
+        menuColor.add(cusColor2);
+
+        cusColor3 = new JMenuItem("Blue");
+        cusColor3.addActionListener(this);
+        cusColor3.setActionCommand("Blue");
+        menuColor.add(cusColor3);
+
 
 
 
@@ -216,6 +238,15 @@ public class GUI implements ActionListener {
             break;
 
             case "Times New Roman":custom.setFont(command);
+            break;
+
+            case "Black":custom.setColor(command);
+            break;
+
+            case "White":custom.setColor(command);
+            break;
+
+            case "Blue":custom.setColor(command);
             break;
         }
 

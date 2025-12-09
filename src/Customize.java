@@ -1,4 +1,4 @@
-import java.awt.Font;
+import java.awt.*;
 
 public class Customize {
 
@@ -45,10 +45,32 @@ public class Customize {
                 gui.textArea.setFont(comicSansMS);
                 break;
 
-            case "Times New Romans":
+            case "Times New Roman":
                 gui.textArea.setFont(timesNewRoman);
                 break;
 
+        }
+    }
+
+    public void setColor(String color){
+        switch(color){
+            case "Black":
+                gui.window.getContentPane().setBackground(Color.BLACK);
+                gui.textArea.setBackground(Color.WHITE);
+                gui.textArea.setForeground(Color.BLACK);
+                break;
+
+            case "White":
+                gui.window.getContentPane().setBackground(Color.white);
+                gui.textArea.setBackground(Color.black);
+                gui.textArea.setForeground(Color.white);
+                break;
+
+            case "Blue":
+                gui.window.getContentPane().setBackground(Color.blue);
+                gui.textArea.setBackground(Color.WHITE);
+                gui.textArea.setForeground(Color.BLUE);
+                break;
         }
     }
 
