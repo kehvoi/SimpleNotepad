@@ -18,6 +18,8 @@ public class Functionality {
     public void newFile(){
         gui.textArea.setText("");
         gui.window.setTitle("New");
+        fileName = null;
+        fileAddress = null;
     }
 
     public void open(){
@@ -46,7 +48,19 @@ public class Functionality {
     }
 
     public void save(){
-
+        if(fileName == null){
+            saveAs();
+        }
+        else{
+            try{
+                FileWriter fileWrite = new FileWriter(fileAddress + fileName);
+                fileWrite.write(gui.textArea.getText());
+                gui.window.setTitle(fileName);
+                fileWrite.close();
+            }catch(Exception e){
+                System.out.println("Error " + e.getMessage());
+            }
+        }
     }
 
     public void saveAs(){
@@ -65,5 +79,9 @@ public class Functionality {
         }catch(IOException ex){
             System.out.println("Error: "+ ex.getMessage());
         }
+    }
+
+    public void exit(){
+        System.exit(0);
     }
 }

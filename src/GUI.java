@@ -12,7 +12,14 @@ public class GUI implements ActionListener {
     JMenu menuFile, menuEdit, menuCustomize;
     JMenuItem fileNew, fileOpen, fileSave, fileSaveAs, fileExit;
 
+    JMenuItem cusWrap, cusFontArial, cusFontCSMS, cusFontTNR, cusFontSize8, cusFontSize12, cusFontSize16, cusFontSize20, cusFontSize24, cusFontSize28;
+    JMenu menuFont, menuFontSize;
+
+    boolean wordWrapOn = false;
+
+
     Functionality file = new Functionality(this);
+    Customize custom = new Customize(this);
 
     public GUI(){
         createWindow();
@@ -23,6 +30,7 @@ public class GUI implements ActionListener {
         createFileSave();
         createFileSaveAs();
         createFileExit();
+        createCustomizeMenu();
 
         window.setVisible(true);
     }
@@ -96,6 +104,67 @@ public class GUI implements ActionListener {
         new GUI();
     }
 
+    public void createCustomizeMenu(){
+        cusWrap = new JMenuItem("Word Wrap: OFF");
+        cusWrap.addActionListener(this);
+        cusWrap.setActionCommand("Word Wrap");
+        menuCustomize.add(cusWrap);
+
+        menuFont = new JMenu("Font");
+        menuCustomize.add(menuFont);
+
+        menuFontSize = new JMenu("Font Size");
+        menuCustomize.add(menuFontSize);
+
+        cusFontArial = new JMenuItem("Arial");
+        cusFontArial.addActionListener(this);
+        cusFontArial.setActionCommand("Arial");
+        menuFont.add(cusFontArial);
+
+        cusFontCSMS = new JMenuItem("Comic Sans MS");
+        cusFontCSMS.addActionListener(this);
+        cusFontCSMS.setActionCommand("Comic Sans MS");
+        menuFont.add(cusFontCSMS);
+
+        cusFontTNR = new JMenuItem("Times New Roman");
+        cusFontTNR.addActionListener(this);
+        cusFontTNR.setActionCommand("Times New Roman");
+        menuFont.add(cusFontTNR);
+
+        cusFontSize8 = new JMenuItem("8");
+        cusFontSize8.addActionListener(this);
+        cusFontSize8.setActionCommand("size 8");
+        menuFontSize.add(cusFontSize8);
+
+        cusFontSize12 = new JMenuItem("12");
+        cusFontSize12.addActionListener(this);
+        cusFontSize12.setActionCommand("size 12");
+        menuFontSize.add(cusFontSize12);
+
+        cusFontSize16 = new JMenuItem("16");
+        cusFontSize16.addActionListener(this);
+        cusFontSize16.setActionCommand("size 16");
+        menuFontSize.add(cusFontSize16);
+
+        cusFontSize20 = new JMenuItem("20");
+        cusFontSize20.addActionListener(this);
+        cusFontSize20.setActionCommand("size 20");
+        menuFontSize.add(cusFontSize20);
+
+        cusFontSize24 = new JMenuItem("24");
+        cusFontSize24.addActionListener(this);
+        cusFontSize24.setActionCommand("size 24");
+        menuFontSize.add(cusFontSize24);
+
+        cusFontSize28 = new JMenuItem("28");
+        cusFontSize28.addActionListener(this);
+        cusFontSize28.setActionCommand("size 28");
+        menuFontSize.add(cusFontSize28);
+
+
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
@@ -114,6 +183,9 @@ public class GUI implements ActionListener {
             break;
 
             case "Exit":file.exit();
+            break;
+
+            case "Word Wrap": custom.wordWrap();
             break;
         }
 
