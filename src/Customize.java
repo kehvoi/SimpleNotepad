@@ -67,9 +67,15 @@ public class Customize {
                 break;
 
             case "Blue":
-                gui.window.getContentPane().setBackground(Color.blue);
+                gui.window.getContentPane().setBackground(Color.BLUE);
                 gui.textArea.setBackground(Color.WHITE);
                 gui.textArea.setForeground(Color.BLUE);
+                break;
+
+            case "Hacker Green":
+                gui.window.getContentPane().setBackground(Color.GREEN);
+                gui.textArea.setBackground(Color.BLACK);
+                gui.textArea.setForeground(Color.GREEN);
                 break;
         }
     }

@@ -12,7 +12,7 @@ public class GUI implements ActionListener {
     JMenu menuFile, menuEdit, menuCustomize;
     JMenuItem fileNew, fileOpen, fileSave, fileSaveAs, fileExit;
 
-    JMenuItem cusWrap, cusFontArial, cusFontCSMS, cusFontTNR, cusFontSize8, cusFontSize12, cusFontSize16, cusFontSize20, cusFontSize24, cusFontSize28, cusColor1, cusColor2, cusColor3;
+    JMenuItem cusWrap, cusFontArial, cusFontCSMS, cusFontTNR, cusFontSize8, cusFontSize12, cusFontSize16, cusFontSize20, cusFontSize24, cusFontSize28, cusColor1, cusColor2, cusColor3, cusColor4;
     JMenu menuFont, menuFontSize, menuColor;
 
 
@@ -36,7 +36,7 @@ public class GUI implements ActionListener {
         custom.selectedFont = "Arial";
         custom.createFont(16);
         custom.wordWrap();
-        custom.setColor("White");
+        custom.setColor("Black");
 
         window.setVisible(true);
     }
@@ -185,7 +185,10 @@ public class GUI implements ActionListener {
         cusColor3.setActionCommand("Blue");
         menuColor.add(cusColor3);
 
-
+        cusColor4 = new JMenuItem("Hacker Green");
+        cusColor4.addActionListener(this);
+        cusColor4.setActionCommand("Hacker Green");
+        menuColor.add(cusColor4);
 
 
     }
@@ -247,6 +250,9 @@ public class GUI implements ActionListener {
             break;
 
             case "Blue":custom.setColor(command);
+            break;
+
+            case "Hacker Green":custom.setColor(command);
             break;
         }
 
