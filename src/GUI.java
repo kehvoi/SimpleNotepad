@@ -42,7 +42,7 @@ public class GUI implements ActionListener {
     }
 
     public void createWindow(){
-        window = new JFrame("Notepad");
+        window = new JFrame("Funpad");
         window.setSize(800,600);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         window.setLocationRelativeTo(null);
