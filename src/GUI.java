@@ -92,11 +92,6 @@ public class GUI implements ActionListener {
     }
 
 
-
-
-
-
-
     public static void main(String[] args){
         new GUI();
     }
@@ -116,6 +111,9 @@ public class GUI implements ActionListener {
             break;
 
             case "Save As":file.saveAs();
+            break;
+
+            case "Exit":file.exit();
             break;
         }
 
