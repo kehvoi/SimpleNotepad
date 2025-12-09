@@ -31,6 +31,9 @@ public class GUI implements ActionListener {
         createFileSaveAs();
         createFileExit();
         createCustomizeMenu();
+        custom.selectedFont = "Arial";
+        custom.createFont(16);
+        custom.wordWrap();
 
         window.setVisible(true);
     }
@@ -186,6 +189,33 @@ public class GUI implements ActionListener {
             break;
 
             case "Word Wrap": custom.wordWrap();
+            break;
+
+            case "size 8": custom.createFont(8);
+            break;
+
+            case "size 12": custom.createFont(12);
+            break;
+
+            case "size 16": custom.createFont(16);
+                break;
+
+            case "size 20": custom.createFont(20);
+                break;
+
+            case "size 24": custom.createFont(24);
+                break;
+
+            case "size 28": custom.createFont(28);
+                break;
+
+            case "Arial":custom.setFont(command);
+            break;
+
+            case "Comic Sans MS":custom.setFont(command);
+            break;
+
+            case "Times New Roman":custom.setFont(command);
             break;
         }
 
