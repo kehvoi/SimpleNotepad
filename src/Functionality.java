@@ -81,6 +81,14 @@ public class Functionality {
         }
     }
 
+    public void undo(){
+        gui.um.undo();
+    }
+
+    public void redo(){
+        gui.um.redo();
+    }
+
     public void exit(){
         System.exit(0);
     }
