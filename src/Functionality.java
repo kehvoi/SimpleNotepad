@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 
 public class Functionality {
 
@@ -43,6 +42,28 @@ public class Functionality {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             JOptionPane.showMessageDialog(null, "File not opened", "Open Error!", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public void save(){
+
+    }
+
+    public void saveAs(){
+        FileDialog fileDia = new FileDialog(gui.window, "Save As", FileDialog.SAVE);
+        fileDia.setVisible(true);
+
+        if(fileDia.getFile()!=null){
+            fileName = fileDia.getFile();
+            fileAddress = fileDia.getDirectory();
+            gui.window.setTitle(fileName);
+        }
+        try{
+            FileWriter fileWrite = new FileWriter(fileAddress + fileName);
+            fileWrite.write(gui.textArea.getText());
+            fileWrite.close();
+        }catch(IOException ex){
+            System.out.println("Error: "+ ex.getMessage());
         }
     }
 }
