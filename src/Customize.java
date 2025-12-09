@@ -76,6 +76,7 @@ public class Customize {
                 gui.window.getContentPane().setBackground(Color.GREEN);
                 gui.textArea.setBackground(Color.BLACK);
                 gui.textArea.setForeground(Color.GREEN);
+
                 break;
         }
     }
